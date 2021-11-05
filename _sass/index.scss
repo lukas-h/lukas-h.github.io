@@ -2,6 +2,7 @@ $black: #292929;
 $red: #c2363a;
 $pink: rgba($red, 0.1);
 
+html,
 body {
     background-color: #f9f9f9;
     color: $black;
@@ -25,7 +26,8 @@ main {
         box-shadow: 0 1px 4px rgba($black, .15);
         max-width: 480px;
         height: 310px;
-
+        position: relative;
+        
         .front>*,
         .back>* {
             @media (min-width:500px) {
