@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>{{ site.title }} | {{ page.title }}</title>
+
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+<link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html }}">
+<meta name="robots" content="index,follow">
+<meta name="author" content="{{ page.author | default: site.author }}">
+<meta itemprop="name" content="{{ site.title }}">
+<meta name="theme-color" content="{{ site.color }}">
+<meta name="google" content="notranslate">
+<meta name="keywords" content="{{ site.keywords | join:', ' }}" />
+<meta name="news_keywords" content="{{ site.keywords | join:', ' }}" />
+<link href="/rss.xml" type="application/rss+xml" rel="alternate" />
+
+{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}" />{% endif %}
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/uploads/144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}/uploads/114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.baseurl }}/uploads/72x72.png">
+<link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/uploads/57x57.png">
+<link rel="shortcut icon" sizes="196x196" href="{{ site.baseurl }}/uploads/196x196.png">
+<link rel="shortcut icon" href="{{ site.baseurl }}/uploads/favicon.png">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+
+<meta name="msapplication-TileImage" content="{{ site.baseurl }}/uploads/144x144.png">
+<meta name="msapplication-TileColor" content="{{ site.color }}">
+
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ page.title | default: site.title }}" />
+<meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html }}" />
+<meta property="og:image" content="{{ page.image | default: site.image }}" />
+<meta property="og:image:type" content="image/png" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ page.title | default: site.title }}" />
+<meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html }}" />
+<meta name="twitter:image" content="{{ page.image | default: site.image }}" />
+<meta name="twitter:site" content="@{{ site.twitter }}" />
+
+
+{% include head/structured-data.html %}

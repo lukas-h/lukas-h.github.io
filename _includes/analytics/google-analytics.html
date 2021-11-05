@@ -1,0 +1,17 @@
+{% if site.google_analytics %}
+<amp-analytics type="googleanalytics" {% if site.cookie_consent %}data-block-on-consent="_till_accepted"{% endif %}>
+    <script type="application/json">
+        {
+          "vars": {
+              "account": "{{ site.google_analytics }}"
+          },
+          "triggers": {
+              "trackPageview": {
+                  "on": "visible",
+                  "request": "pageview"
+              }
+          }
+      }
+    </script>
+</amp-analytics>
+{% endif %}

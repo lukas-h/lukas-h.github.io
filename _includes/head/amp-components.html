@@ -1,0 +1,71 @@
+{% assign components = site.amp_components %}
+{% assign component_keys = site.amp_components | map: "category" %}
+
+{% if page.amp_components %}
+
+    {% for comp in page.amp_components %}
+        {% if site.component_keys contains comp.name %}{% else %}
+            
+            {% assign comp_array = page.amp_components | where: "name", comp.name %}
+            {% assign components = components | concat: comp_array %}
+            {% assign comp_name =  comp.name | split: "" %}
+            {% assign components_keys = component_keys | concat: comp_name %}
+
+        {% endif %}
+    {% endfor %}
+
+{% endif %}
+
+{% if page.amp_type == "story" %}
+
+    {% if component_keys contains "amp-story" %}{% else %}
+
+        {% assign story_comp = site.data.amp_components | where: "name", "amp-story" %}
+        {% assign components = components | concat: story_comp %}
+        {% assign comp_name = "amp-story" | split: "" %}
+        {% assign component_keys = component_keys | concat: comp_name %}
+
+    {% endif %}
+
+{% endif %}
+
+{% if site.google_analytics or site.facebook_analytics %}
+    {% if component_keys contains "amp-analytics" %}{% else %}
+
+        {% assign analytics_comp = site.data.amp_components | where: "name", "amp-analytics" %}
+        {% assign components = components | concat: analytics_comp %}
+        {% assign comp_name = "amp-analytics" | split: "" %}
+        {% assign component_keys = component_keys | concat: comp_name %}
+        
+    {% endif %}
+{% endif %}
+
+{% if site.cookie_consent %}
+
+    {% if component_keys contains "amp-analytics" %}{% else %}
+
+        {% assign consent_comp = site.data.amp_components | where: "name", "amp-consent" %}
+        {% assign components = components | concat: consent_comp %}
+        {% assign comp_name = "amp-consent" | split: "" %}
+        {% assign component_keys = component_keys | concat: comp_name %}
+
+    {% endif %}
+
+{% endif %}
+
+{% if site.pwa %}
+    {% if component_keys contains "amp-install-serviceworker" %}{% else %}
+
+        {% assign sw_comp = site.data.amp_components | where: "name", "amp-install-serviceworker" %}
+        {% assign components = components | concat: sw_comp %}
+        {% assign comp_name = "amp-install-serviceworker" | split: "" %}
+        {% assign component_keys = component_keys | concat: comp_name %}
+        
+    {% endif %}
+{% endif %}
+
+{% for comp in components %}
+
+<script async custom-{% if comp.template %}template{% else %}element{% endif %}="{{ comp.name }}" src="https://cdn.ampproject.org/v0/{{ comp.name }}-{{ comp.version | default: "0.1" }}.js"></script>
+
+{% endfor %}

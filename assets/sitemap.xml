@@ -1,0 +1,20 @@
+---
+layout: none
+permalink: "sitemap.xml"
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ <sitemap>
+    <loc>{{ site.url }}{{ site.baseurl }}/sitemap-posts.xml</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+ </sitemap>
+<sitemap>
+    <loc>{{ site.url }}{{ site.baseurl }}/sitemap-pages.xml</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+ </sitemap>
+ <sitemap>
+    <loc>{{ site.url }}{{ site.baseurl }}/google-news.xml</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+ </sitemap>
+</sitemapindex>

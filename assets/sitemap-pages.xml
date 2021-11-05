@@ -1,0 +1,30 @@
+---
+layout: none
+permalink: "sitemap-pages.xml"
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% assign documents = site.pages %}
+{% for p in documents %}
+{% if p.output == false or p.path contains "assets" %}
+{% else %}
+{% assign u = p.url %}{% assign usize = u | size | minus: 1 %}
+{% assign u =  u | slice: usize %}{% if u != '/' and u != 'l' and usize <= 1 %}{% assign x = p.url | append: '.html' %}{% else %}{% assign x = p.url %}{% endif %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ x | replace: '&', '&amp;' }}</loc>
+    {% if p.lastmod == null %}
+    {% if p.date == null %}
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    {% else %}
+    <lastmod>{{ p.date | date_to_xmlschema }}</lastmod>
+    {% endif %}
+    {% else %}
+    <lastmod>{{ p.lastmod | date_to_xmlschema }}</lastmod>
+    {% endif %}
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+{% endif %}
+{% endfor %}
+</urlset>

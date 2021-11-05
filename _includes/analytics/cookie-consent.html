@@ -1,0 +1,23 @@
+{% if site.cookie_consent %}
+<amp-consent layout="nodisplay" id="dsgvo-consent">
+    <script type="application/json">
+      {
+        "consentInstanceId": "dsgvo-consent",
+        "consentRequired": true,
+        "promptUI": "consent-ui",
+        "captions": {
+          "consentPromptCaption": "Diese Seite verwendet Cookies. Einige sind essenziell, andere verwenden wir für Statistiken und Marketing.",
+          "buttonActionCaption": "Alle Cookies akzeptieren"
+        }
+      }
+    </script>
+    <div id="consent-ui">
+        <p>
+            Diese Seite verwendet Cookies. Einige sind essenziell, andere verwenden wir für Statistiken und Marketing.
+            <a href="/datenschutz.html">Mehr erfahren!</a>
+        </p>
+        <button on="tap:dsgvo-consent.accept" role="button" class="btn btn-primary">Alle akzeptieren</button>
+        <button on="tap:dsgvo-consent.reject" role="button" class="btn">Nur essenzielle</button>
+    </div>
+</amp-consent>
+{% endif %}

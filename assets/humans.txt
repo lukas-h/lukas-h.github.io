@@ -1,0 +1,18 @@
+---
+layout: none
+permalink: "humans.txt"
+---
+
+/* TEAM */
+    Author: {{ site.author }}
+    Location: {{ site.location }}
+    {% if site.twitter %}Twitter: @{{ site.twitter }}{% endif %}
+
+/* THANKS */
+
+
+/* SITE */
+    Last update: {{ site.time | date: "%Y/%m/%d" }}
+    Standards: HTML5, CSS3, ...
+    Components: AMP
+    Software: Jekyll, SASS

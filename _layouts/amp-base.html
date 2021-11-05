@@ -1,0 +1,18 @@
+---
+layout: compress
+---
+
+<!doctype html>
+<html ⚡>
+{% include head.html %}
+
+<body>
+    {% if page.amp_type =="story" %}
+        {% include amp-story/body.html %}
+    {% else %}
+        {{ content }}
+    {% endif %}
+    {% include foot.html %}
+</body>
+
+</html>

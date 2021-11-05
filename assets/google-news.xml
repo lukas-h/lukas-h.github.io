@@ -1,0 +1,26 @@
+---
+layout: none
+permalink: "google-news.xml"
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  {% for post in site.posts limit: 10 %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ post.url | cgi_escape | replace: '%2F', '/' }}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>{{ site.title }}</news:name>
+        <news:language>de</news:language>
+      </news:publication>
+      <news:genres></news:genres>
+      <news:publication_date>{{ post.date | date: "%Y-%m-%d" }}</news:publication_date>
+      <news:title>{{ post.title | xml_escape }}</news:title>
+      {% assign cats = post.categories %}
+      {% assign cats = cats | concat: post.tags %}
+      <news:keywords>{{ cats | join: ', ' | xml_escape }}</news:keywords>
+    </news:news>
+  </url>
+  {% endfor %}
+</urlset>
