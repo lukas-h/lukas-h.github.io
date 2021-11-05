@@ -27,7 +27,7 @@ main {
         max-width: 480px;
         height: 310px;
         position: relative;
-        
+
         .front>*,
         .back>* {
             @media (min-width:500px) {
@@ -92,5 +92,17 @@ main {
             display: block;
             font-style: normal;
         }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    text-align: right;
+    a {
+        text-decoration: underline;
+        font-size: .9rem;
+        color: rgba($black, .75);
     }
 }
