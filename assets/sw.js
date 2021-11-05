@@ -69,7 +69,7 @@ self.addEventListener("fetch", event => {
   let offline = "/offline.html";
 
   if (request.url.match(/\.(jpe?g|png|gif|svg|tiff?)$/)) {
-    offline = "/uploads/sample.jpg";
+    offline = "/assets/images/sample.jpg";
   }
   event.respondWith(
     fetch(request)

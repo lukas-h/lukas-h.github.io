@@ -16,32 +16,32 @@ permalink: "manifest.json"
     "description": "{{ site.description }}",
     "icons": [
         {
-            "src": "{{ site.baseurl }}/uploads/57x57.png",
+            "src": "{{ site.baseurl }}/assets/images/57x57.png",
             "sizes": "57x57",
             "type": "image/png"
         },
         {
-            "src": "{{ site.baseurl }}/uploads/72x72.png",
+            "src": "{{ site.baseurl }}/assets/images/72x72.png",
             "sizes": "72x72",
             "type": "image/png"
         },
         {
-            "src": "{{ site.baseurl }}/uploads/114x114.png",
+            "src": "{{ site.baseurl }}/assets/images/114x114.png",
             "sizes": "114x114",
             "type": "image/png"
         },
         {
-            "src": "{{ site.baseurl }}/uploads/144x144.png",
+            "src": "{{ site.baseurl }}/assets/images/144x144.png",
             "sizes": "144x144",
             "type": "image/png"
         },
         {
-            "src": "{{ site.baseurl }}/uploads/196x196.png",
+            "src": "{{ site.baseurl }}/assets/images/196x196.png",
             "sizes": "196x196",
             "type": "image/png"
         },
         {
-            "src": "{{ site.baseurl }}/uploads/512x512.png",
+            "src": "{{ site.baseurl }}/assets/images/512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
