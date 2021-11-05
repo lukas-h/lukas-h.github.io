@@ -4,3 +4,5 @@ description: Lukas Himsel – Software developer from Germany
 pwa: true
 google_fonts:
 - Tinos
+exclude:
+- README.md
