@@ -1,5 +1,8 @@
 
 
 <style amp-custom>
-    
+{% capture scss %}
+@import "index.scss";
+{% endcapture %}
+{{ scss | scssify }}
 </style>

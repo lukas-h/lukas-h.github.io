@@ -1,0 +1,94 @@
+$black: #292929;
+$red: #c2363a;
+$pink: rgba($red, 0.1);
+
+body {
+    background-color: #f9f9f9;
+    color: $black;
+    margin: 0;
+    font-family: 'Tinos', serif;
+}
+
+main {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        background-color: rgb(255, 255, 250);
+        box-shadow: 0 1px 4px rgba($black, .15);
+        max-width: 480px;
+        height: 310px;
+
+        .front>*,
+        .back>* {
+            @media (min-width:500px) {
+                margin-left: 5rem;
+                width: 480px;
+            }
+
+            @media(max-width:499px) {
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        h1 {
+            display: inline-block;
+            margin: 5.6rem 5rem 0 0;
+
+            line-height: 3rem;
+            padding: 0;
+            font-size: 3rem;
+            font-weight: normal;
+            color: $black;
+
+            .first,
+            .last {
+                display: inline-block;
+                position: relative;
+            }
+
+            .first {
+                &::before {
+                    font-size: 6rem;
+                    position: absolute;
+                    left: -0.2rem;
+                    content: 'L';
+                    color: $pink;
+                }
+            }
+
+            .last {
+                &::after {
+                    font-size: 6rem;
+                    position: absolute;
+                    right: 4.53rem;
+                    content: 'H';
+                    color: $pink;
+                }
+            }
+        }
+
+        small {
+            color: $red;
+            font-size: 1.7rem;
+            display: block;
+            font-weight: 200;
+            margin: 1rem 0;
+        }
+
+        address {
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+            display: block;
+            font-style: normal;
+        }
+    }
+}
