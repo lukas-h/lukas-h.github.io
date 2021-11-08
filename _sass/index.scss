@@ -100,9 +100,18 @@ footer {
     bottom: 1rem;
     right: 1rem;
     text-align: right;
+
     a {
         text-decoration: underline;
         font-size: .9rem;
         color: rgba($black, .75);
+    }
+
+    .show {
+        display: inline-block;
+    }
+
+    .hide {
+        display: none;
     }
 }

@@ -4,5 +4,7 @@ description: Lukas Himsel – Software developer from Germany
 pwa: true
 google_fonts:
 - Tinos
+amp_components:
+- name: amp-bind
 exclude:
 - README.md
