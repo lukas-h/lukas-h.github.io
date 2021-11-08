@@ -16,7 +16,7 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: .5rem;
+    padding: .6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +39,10 @@ main {
                 text-align: center;
                 width: 100%;
             }
+        }
+
+        @media(max-width:499px) {
+            width: 100%;
         }
 
         h1 {
@@ -97,8 +101,8 @@ main {
 
 footer {
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: .6rem;
+    right: .6rem;
     text-align: right;
 
     a {
