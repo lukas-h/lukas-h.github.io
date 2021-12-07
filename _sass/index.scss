@@ -109,6 +109,8 @@ footer {
         text-decoration: underline;
         font-size: .9rem;
         color: rgba($black, .75);
+        user-select: none;
+        cursor: pointer;
     }
 
     .show {
