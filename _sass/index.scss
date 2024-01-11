@@ -35,7 +35,13 @@ main {
             padding-bottom: 3.5rem;
 
             .front>* {
-                margin-left: 2.5rem;
+                margin-left: 2rem;
+            }
+        }
+
+        &:not(.more) {
+            @media (max-width: 499px) {
+                text-align: center;
             }
         }
 
@@ -68,17 +74,22 @@ main {
             }
 
             @media(max-width:499px) {
-                text-align: center;
                 width: 100%;
             }
         }
 
         @media(max-width:499px) {
             width: 100%;
+
+            .front:first-child {
+                margin-top: 5.6rem;
+            }
         }
 
-        .front:first-child {
-            margin: 5.6rem 5rem 0 0;
+        @media (min-width: 500px) {
+            .front:first-child {
+                margin: 5.6rem 5rem 0 0;
+            }
         }
 
         h1 {
@@ -141,12 +152,13 @@ main {
             font-style: normal;
             list-style: none;
             padding: 0 0 0 1rem;
-            max-width: 100%;
+            max-width: calc(100% - 4rem);
 
             li {
                 margin: 0;
                 padding: 0 0 .3rem;
                 list-style: circle;
+                text-align: left;
 
                 a {
                     color: $black;
