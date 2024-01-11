@@ -81,11 +81,11 @@ main {
         .front>* {
             @media (min-width:500px) {
                 margin-left: 5rem;
-                width: 480px;
+                width: calc(480px - 5rem);
             }
 
             @media(max-width:499px) {
-                width: 100%;
+                width: calc(100% - 5rem);
             }
         }
 
