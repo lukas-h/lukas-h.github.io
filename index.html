@@ -8,22 +8,22 @@ title: Lukas Himsel
 </header>
 
 <main>
-    <div class="card">
+    <div class="card expanded">
         <div class="front">
             <h1><span class="first">Lukas</span> <span class="last">Himsel</span></h1>
             <small>
-                Digitale Produkte
+                Digital Products
             </small>
             <address>
                 <span>lukas (at) himsel.me</span><br>
                 <span>+49 173 – 560 9184</span>
             </address>
         </div>
-        <div class="back"></div>
     </div>
     
 </main>
 
 <footer>
-    <a on="tap:AMP.setState({show: !show})"><span [class]="show ? 'show' : 'hide'" class="hide">Kontakt s.o., Lorenzer Str. 23, 90402 Nürnberg&ensp;</span>Impressum</a>
+    <a class="left" href="/more">More about me</a>
+    <a class="right" on="tap:AMP.setState({show: !show})"><span [class]="show ? 'show' : 'hide'" class="hide">Kontakt s.o.<br>Lorenzer Str. 23<br>90402 Nürnberg</span><br>Impressum</a>
 </footer>

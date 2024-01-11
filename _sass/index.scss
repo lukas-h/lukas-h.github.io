@@ -11,13 +11,14 @@ body {
 }
 
 main {
-    position: fixed;
+    position: relative;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
-    padding: .6rem;
+    min-height: 90vh;
+    padding: 1.2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -25,11 +26,42 @@ main {
         background-color: rgb(255, 255, 250);
         box-shadow: 0 1px 4px rgba($black, .15);
         max-width: 480px;
+
         height: 310px;
+
+        &.more {
+            height: auto;
+            min-height: 310px;
+            padding-bottom: 3.5rem;
+
+            .front>* {
+                margin-left: 2.5rem;
+            }
+        }
+
         position: relative;
 
-        .front>*,
-        .back>* {
+
+        .back {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            transition: all .3s linear;
+            background: transparent;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            color: $black;
+            background: rgba($black, 0.04);
+
+            text-decoration: none;
+
+            &:hover,
+            &:active {
+                background: rgba($red, 0.3);
+            }
+        }
+
+        .front>* {
             @media (min-width:500px) {
                 margin-left: 5rem;
                 width: 480px;
@@ -45,9 +77,14 @@ main {
             width: 100%;
         }
 
+        .front:first-child {
+            margin: 5.6rem 5rem 0 0;
+        }
+
         h1 {
             display: inline-block;
-            margin: 5.6rem 5rem 0 0;
+            //margin: 5.6rem 5rem 0 0;
+            margin: 0;
 
             line-height: 3rem;
             padding: 0;
@@ -96,20 +133,56 @@ main {
             display: block;
             font-style: normal;
         }
+
+        ul {
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+            display: block;
+            font-style: normal;
+            list-style: none;
+            padding: 0 0 0 1rem;
+            max-width: 100%;
+
+            li {
+                margin: 0;
+                padding: 0 0 .3rem;
+                list-style: circle;
+
+                a {
+                    color: $black;
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }
 
 footer {
     position: fixed;
     bottom: .6rem;
+    left: .6rem;
     right: .6rem;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    &:last-child {
+        align-self: flex-end;
+    }
 
     a {
         text-decoration: underline;
         font-size: .9rem;
         color: rgba($black, .75);
         cursor: pointer;
+
+        &.right {
+            text-align: right;
+        }
+
+        &.left {
+            text-align: left;
+        }
     }
 
     .show {
