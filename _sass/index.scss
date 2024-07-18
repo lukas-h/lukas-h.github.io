@@ -31,9 +31,15 @@ main {
         height: auto;
 
         .card {
-            min-height: 310px;
-            padding-bottom: 3.5rem;
+            min-height: 50px;
+            padding-bottom: 2rem;
             height: auto;
+            margin-bottom: 2rem;
+
+            .front {
+
+                margin-top: 2rem !important;
+            }
 
             .front>* {
                 margin-left: 2rem;
@@ -215,4 +221,10 @@ footer {
     .hide {
         display: none;
     }
+}
+
+hr{
+    border: none;
+    height: 2px;
+    background: #c2363a;
 }

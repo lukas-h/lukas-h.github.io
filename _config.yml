@@ -1,6 +1,6 @@
 ---
 title: Lukas Himsel
-description: Lukas Himsel – Digitale Produkte
+description: Lukas Himsel – Digitale Produkte
 pwa: true
 google_fonts:
 - Tinos
@@ -8,3 +8,9 @@ amp_components:
 - name: amp-bind
 exclude:
 - README.md
+
+collections:
+  ventures:
+    title: Ventures
+    output: false
+    # permalink: "/ueber/:title.html"
