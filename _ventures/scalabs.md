@@ -4,7 +4,7 @@ start: 2021
 end: 
 url: https://scalabs.de
 retired: false
-monthly: 4-7
+monthly: 3-7
 ---
 
 Sophisticated geodata-based software & geodata tooling for Dart and Flutter.
