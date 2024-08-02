@@ -11,8 +11,6 @@ body {
 }
 
 main {
-
-
     position: fixed;
     top: 0;
     left: 0;
@@ -64,25 +62,6 @@ main {
 
         position: relative;
 
-
-        .back {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            transition: all .3s linear;
-            background: transparent;
-            padding: .5rem 1rem;
-            border-radius: .5rem;
-            color: $black;
-            background: rgba($black, 0.04);
-
-            text-decoration: none;
-
-            &:hover,
-            &:active {
-                background: rgba($red, 0.3);
-            }
-        }
 
         .front>* {
             @media (min-width:500px) {
@@ -192,7 +171,7 @@ footer {
     left: .6rem;
     right: .6rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: end;
 
     &:last-child {
@@ -223,8 +202,36 @@ footer {
     }
 }
 
-hr{
+hr {
     border: none;
     height: 2px;
     background: #c2363a;
+}
+
+a {
+    color: #c2363a;
+}
+
+.card + .card {
+    margin-top: 2rem;
+}
+
+.button {
+    margin: 2rem;
+    transition: all .3s linear;
+    background: transparent;
+    padding: 1rem 1.6rem .6rem;
+    border-radius: .5rem;
+    color: $black;
+    background: rgba($black, 0.04);
+    font-size: 1.3rem;
+
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 100;
+
+    &:hover,
+    &:active {
+        background: rgba($red, 0.3);
+    }
 }

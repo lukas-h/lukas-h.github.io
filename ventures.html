@@ -4,6 +4,7 @@ title: Lukas Himsel
 ---
 
 <header>
+  <a class="button" href="/">Back to main</a>
 </header>
 
 <main class="more">
@@ -14,14 +15,14 @@ title: Lukas Himsel
   {% assign prev = ventures | where: 'retired', true %}
   {% assign current = ventures | where: 'retired', false %}
   {% for venture in current %}
-      <small>{{ venture.title }} ({{ venture.monthly }}K)</small>
+      <small>{{ venture.title }}</small>
       <p>
         ({% if venture.start == venture.end %}{{ venture.start }}{% else %}{{ venture.start }} - {{ venture.end }}{% endif %}): {{ venture.content | strip_html }}
       </p>
       {% endfor %}
       <hr>
       {% for venture in prev %}
-      <small>{{ venture.title }} ({{ venture.monthly }}K)</small>
+      <small>{{ venture.title }}</small>
       <p>
         ({% if venture.start == venture.end %}{{ venture.start }}{% else %}{{ venture.start }} - {{ venture.end }}{% endif %}): {{ venture.content | strip_html }}
       </p>
@@ -31,7 +32,6 @@ title: Lukas Himsel
 </main>
 
 <footer>
-  <a class="left" href="/">Back to main</a>
   <a class="right" on="tap:AMP.setState({show: !show})"
     ><span [class]="show ? 'show' : 'hide'" class="hide"
       >Kontakt s.o.<br />Lorenzer Str. 23<br />90402 Nürnberg</span

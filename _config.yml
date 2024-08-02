@@ -13,4 +13,9 @@ collections:
   ventures:
     title: Ventures
     output: false
-    # permalink: "/ueber/:title.html"
+  talks:
+    title: Talks
+    output: false
+  posts:
+    title: Posts
+    output: true

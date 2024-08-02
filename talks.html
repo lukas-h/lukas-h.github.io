@@ -1,0 +1,28 @@
+---
+layout: default
+title: Lukas Himsel
+---
+
+<header>
+  <a class="button" href="/">Back to main</a>
+</header>
+
+<main class="more">
+  <div class="card">
+    <div class="front">
+      <h3>My Talks</h3>
+      {% assign talks = site.talks | sort: 'year' | reverse %}
+      {% for talk in talks %}
+      <small>{{ talk.title }}</small>
+      <p>
+        ({{ talk.year }}): {{ talk.content | strip_html }}
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a class="right" on="tap:AMP.setState({show: !show})"><span [class]="show ? 'show' : 'hide'" class="hide">Kontakt
+      s.o.<br />Lorenzer Str. 23<br />90402 Nürnberg</span><br />Impressum</a>
+</footer>
